@@ -34,11 +34,11 @@ function calcularTotal() {
     let total = subtotal;
 
   
-    if (subtotal > 10000) {
+    if (subtotal > 15000) {
       descuento = subtotal * 0.15;
-    } else if (subtotal > 7000) {
+    } else if (subtotal > 10000) {
       descuento = subtotal * 0.1;
-    } else if (subtotal > 5000) {
+    } else if (subtotal > 7000) {
       descuento = subtotal * 0.05;
     }
   
