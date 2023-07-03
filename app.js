@@ -1,5 +1,5 @@
 
-function openNav(){confirm
+function openNav(){
     document.getElementById("mobile-menu").style.width = "100%";
 }
 
@@ -46,7 +46,7 @@ function calculateTotal() {
 
     document.getElementById("total").textContent = "Total (con descuento): $" + total.toFixed(2);
 }
-    function resetearCampos() {
+    function resetFields() {
       document.getElementById("combo1").value = 0;
       document.getElementById("combo2").value = 0;
       document.getElementById("combo3").value = 0;
@@ -65,7 +65,7 @@ function calculateTotal() {
 
 let orderNro =Math.floor(Math.random()*1000) ;
 
-  function confirmar () {
+  function confirm () {
     Swal.fire({
       title: '¿Completaste tu compra?',
       showDenyButton: true,
