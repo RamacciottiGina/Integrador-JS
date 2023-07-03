@@ -1,5 +1,5 @@
 
-function openNav(){
+function openNav(){confirm
     document.getElementById("mobile-menu").style.width = "100%";
 }
 
@@ -7,17 +7,17 @@ function closeNav(){
     document.getElementById("mobile-menu").style.width = "0%";
 }
 
-function calcularTotal() {
-    const combo1Cantidad = parseInt(document.getElementById("combo1").value);
-    const combo2Cantidad = parseInt(document.getElementById("combo2").value);
-    const combo3Cantidad = parseInt(document.getElementById("combo3").value);
+function calculateTotal() {
+    const combo1Quantity = parseInt(document.getElementById("combo1").value);
+    const combo2Quantity = parseInt(document.getElementById("combo2").value);
+    const combo3Quantity = parseInt(document.getElementById("combo3").value);
   
-    const combo1Precio = 5500;
-    const combo2Precio = 4000;
-    const combo3Precio = 6000;
+    const combo1Price = 5500;
+    const combo2Price = 4000;
+    const combo3Price = 6000;
 
   
-    let subtotal = combo1Cantidad * combo1Precio + combo2Cantidad * combo2Precio + combo3Cantidad * combo3Precio;
+    let subtotal = combo1Quantity * combo1Price + combo2Quantity * combo2Price + combo3Quantity * combo3Price;
     
     const extrasList = document.getElementById("extras-list");
     const extrasCheckboxes = extrasList.getElementsByTagName("input");
@@ -30,19 +30,19 @@ function calcularTotal() {
 
     
     document.getElementById("subtotal").textContent = "Subtotal: $" + subtotal.toFixed(2);
-    let descuento = 0;
+    let discount = 0;
     let total = subtotal;
 
   
     if (subtotal > 15000) {
-      descuento = subtotal * 0.15;
+      discount = subtotal * 0.15;
     } else if (subtotal > 10000) {
-      descuento = subtotal * 0.1;
+      discount = subtotal * 0.1;
     } else if (subtotal > 7000) {
-      descuento = subtotal * 0.05;
+      discount = subtotal * 0.05;
     }
   
-    total = total - descuento;
+    total = total - discount;
 
     document.getElementById("total").textContent = "Total (con descuento): $" + total.toFixed(2);
 }
@@ -63,7 +63,7 @@ function calcularTotal() {
     }
 
 
-let nroPedido =Math.floor(Math.random()*1000) ;
+let orderNro =Math.floor(Math.random()*1000) ;
 
   function confirmar () {
     Swal.fire({
@@ -73,7 +73,7 @@ let nroPedido =Math.floor(Math.random()*1000) ;
       denyButtonText: `Rechazar`,
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire(`¡Gracias por tu compra!`, `<i>Tu numero de pedido es #${nroPedido} </i>`, 'success')
+        Swal.fire(`¡Gracias por tu compra!`, `<i>Tu numero de pedido es #${orderNro} </i>`, 'success')
       } else if (result.isDenied) {
         Swal.fire('¡Seguí comprando!', '', 'info')
       }
